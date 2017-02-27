@@ -15,6 +15,11 @@ $state = array(
 
 if(is_post_request()) {
 
+  if(!csrf_token_is_valid()){
+    $error = 'Error: invalid request';
+    exit($error);
+  }
+
   // Confirm that values are present before accessing them.
   if(isset($_POST['name'])) { $state['name'] = $_POST['name']; }
   if(isset($_POST['code'])) { $state['code'] = $_POST['code']; }
@@ -45,6 +50,7 @@ if(is_post_request()) {
     <input type="text" name="code" value="<?php echo h($state['code']); ?>" /><br />
     <br />
     <input type="submit" name="submit" value="Create"  />
+    <?php echo csrf_token_tag(); ?>
   </form>
 
 </div>
