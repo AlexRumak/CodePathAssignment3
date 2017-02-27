@@ -39,6 +39,7 @@ if(is_post_request()) {
         redirect_to('index.php');
       } else {
         // Username found, but password does not match.
+        //TODO: make error message its own function which takes username as an input
         $errors[] = "The password you have entered is incorrect or the user <span style=\"color:red\">" . $username . "</span> does not exist";
       }
     } else {
