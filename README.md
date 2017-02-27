@@ -13,6 +13,9 @@ Two other potential faults that could arise are the following:
 * First, the connection given to users to the mysql database during transactions is that of the root user. This gives a hacker the potential priveledges of the root user. The connection should be altered to be weaker than a root user.
 * Second, and more obvious, is that a master password is used for login. But, this is a given, and to correct this will likely be covered in the future.
 
+##Bugs Encountered:
+I encountered some bugs in the penetration testing files for this project. This is reflected in the user-story. The page for the SQL injection test and the page for the CSRF test refresh their content endlessly, unless manually cancelled. The results of the tests can be seen in the user story very briefly, however. Once the page refresh is manually cancelled and the test is run, the results show that the tests failed to penetrate my system for a very brief moment (after which, the page begins to refresh like mad again...).
+
 ##User Stories Implemented:
 
 The following required functionality is complete:
