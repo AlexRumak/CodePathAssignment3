@@ -32,7 +32,7 @@
   // Determines if the form token should be considered "recent"
   // by comparing it to the time a token was last generated.
   function csrf_token_is_recent() {
-    if(time() - $_SESSION['csrf_token_time'] > 300){
+    if(time() - $_SESSION['csrf_token_time'] > 600){
       return false;
     }
     return true;

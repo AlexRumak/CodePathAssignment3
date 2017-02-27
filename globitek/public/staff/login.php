@@ -40,11 +40,11 @@ if(is_post_request()) {
       } else {
         // Username found, but password does not match.
         //TODO: make error message its own function which takes username as an input
-        $errors[] = "The password you have entered is incorrect or the user <span style=\"color:red\">" . $username . "</span> does not exist";
+        $errors[] = "The password you have entered is incorrect or the user <span style=\"color:red\">" . h($username) . "</span> does not exist";
       }
     } else {
       // No username found
-    $errors[] = "The password you have entered is incorrect or the user <span style=\"color:red\">" . $username . "</span> does not exist";
+    $errors[] = "The password you have entered is incorrect or the user <span style=\"color:red\">" . h($username) . "</span> does not exist";
     }
   }
 }
